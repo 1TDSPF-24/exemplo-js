@@ -10,7 +10,7 @@ no código*/
 // elementoH1.addEventListener("click", function(){
 //     console.log("Agora vitaminado!");
 // });
-
+/*
 //Declaradores em JavaScript
 //Var
 var nome = "João";
@@ -27,6 +27,7 @@ console.log(`A empresa ${pessoaJuridica} é Jurídica.`);
 
 //Tipos de dados
 //String
+/*
 var frase = "Eu amo programação.";
 console.log(frase);
 
@@ -53,6 +54,7 @@ if (condicao) {
  Propriedades: Chaves, atributos 
  Métodos: Parênteses, funções 
  */
+/*
 var carro = {
   marca: "Fiat",
   modelo: "Palio",
@@ -66,3 +68,98 @@ console.log(carro.ano);
 carro.marca = "volkswagen";
 console.log(carro.marca);
 console.log(carro["marca"]);
+
+
+// Tradicional
+function soma(param1, param2){
+
+}
+
+const soma = (param1, param2) => {
+
+}
+
+const soma = (a,b)=>{
+  return a+b;
+}
+
+*/
+
+// Arrow function não tem o "this"
+// Function tradicional tem o "this"
+
+// const soma = (a,b)=>{
+//   this.a = a;
+//   this.b = b;
+//   return a + b;
+// }
+
+// function soma2 (a,b){
+//   this.a = a;
+//   this.b = b;
+//   return  a + b;
+// }
+
+// console.log(soma(2,2));
+
+//const obj ={
+//  nome :"José",
+//  saudacao:function () {
+//    return "oi, meu nome é " + this.nome + "!";
+//  }
+//}
+//
+//console.log(saudacao)
+
+//let elInputEmail = document.getElementById("idEmail");
+//
+//console.log(elInputEmail)
+//
+//let elLabelEmail = document.querySelector("label[for=idEmail]");
+//console.log(elLabelEmail.innerText);
+//
+//const pegaTexto = (texto)=>{
+//       console.log(texto.value);
+//}
+
+//Recuperar todos os inputs através de funções do DOM.
+
+//const listaDeInputs = document.getElementsByTagName("input");
+//console.log(listaDeInputs);
+//
+////Criando um array de números
+//let numeros1 = [1,2,3,4,5];
+//let numeros2 = [6,7,8,9,10];
+//
+////Con
+//let numeros3 = numeros1.concat(numeros2);
+//console.log(numeros3);
+//
+//let numeros4 = [...numeros1, ...numeros2];
+//console.log(numeros4);
+//
+////Converter uma HTMLCollections em Array com SPREAD (...);
+//const novaListaDeElementos = [...listaDeInputs];
+//console.log(novaListaDeElementos);
+
+const validacao = (input1,input2)=>{
+
+  let usuario = {
+    emailUsuario: "jo@email.com",
+    senhaUsuario: "123456"
+  }
+
+  if ((input1.value == usuario.emailUsuario) && (input2.value == usuario.senhaUsuario)) {
+     console.log("Login validado copm SUCESSO!");
+      // input1.value = "";
+      // input2.value = "";
+      document.querySelector("form").reset();
+    return false;
+  }
+  else{
+     console.log("Nome de usuário ou senha incorretos");
+    return false;
+  }
+
+}
+
