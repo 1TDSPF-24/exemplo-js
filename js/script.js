@@ -142,23 +142,66 @@ no código*/
 // const novaListaDeElementos = [...listaDeInputs];
 // console.log(novaListaDeElementos);
 
+let listaUsuarios = [
+  {nome:"João José",emailUsuario: "jo@email.com",senhaUsuario: "123456"},
+  {nome:"Maria Chiquinha",emailUsuario: "ma@email.com",senhaUsuario: "123456"},
+  {nome:"Zezinho Trovão",emailUsuario: "ze@email.com",senhaUsuario: "123456"},
+  {nome:"Neiva Lurdes",emailUsuario: "ne@email.com",senhaUsuario: "123456"},
+  {nome:"Beto Carlos",emailUsuario: "be@email.com",senhaUsuario: "123456"},
+];
+
+// let ulLista = document.querySelector("#menu");
+
+// listaUsuarios.forEach((u)=>{
+//   let li = document.createElement("li");
+//   li.setAttribute("class","link");
+//   li.innerHTML = `<a href="#">${u.nome}</a>`;
+//   ulLista.appendChild(li);
+// });
+
+
 const validacao = (input1,input2)=>{
 
-  let usuario = {
-    emailUsuario: "jo@email.com",
-    senhaUsuario: "123456"
-  }
+  let msgStatus;
 
-  if ((input1.value == usuario.emailUsuario) && (input2.value == usuario.senhaUsuario)) {
-      console.log("Login validado copm SUCESSO!");
-      // input1.value = "";
-      // input2.value = "";
-      document.querySelector("form").reset();
-    return false;
-  }else{
-    console.log("Nome de usuário ou senha incorretos.");
-    return false;
-  }
+  //Tratamento de erro
+  try{
+  //Vamos recuperar o elemento da msgStatus:
+    msgStatus = document.querySelector(".valida");
+ 
+  for (let x = 0; x < listaUsuarios.length; x++) {
+
+      if ((input1.value == listaUsuarios[x].emailUsuario) && (input2.value == listaUsuarios[x].senhaUsuario)) {
+          msgStatus.innerText = "Login validado com SUCESSO!";
+          //Vamos trocar a classe css da msgStatus
+          msgStatus.setAttribute("class","sucesso");
+          document.querySelector("form").reset();
+
+          setTimeout(()=>{
+            //Vamos apagar o texto da msgStatus
+            msgStatus.innerText = "";
+            //Vamos trocar a classe css da msgStatus
+            msgStatus.setAttribute("class","valida");
+            window.location.href = "https://www.fiap.com.br";
+          },3000);
+
+          return false;
+      }
+    }
+
+      msgStatus.innerText = "Nome de usuário ou senha incorretos.";
+      msgStatus.setAttribute("class","erro");
+      setTimeout(()=>{
+        //Vamos apagar o texto da msgStatus
+        msgStatus.innerText = "";
+        //Vamos trocar a classe css da msgStatus
+        msgStatus.setAttribute("class","valida");
+      },3000);
+    }catch(erro){
+      msgStatus = document.querySelector("div p");
+      msgStatus.setAttribute("class","valida");
+    }
+      return false;
 
 }
 
