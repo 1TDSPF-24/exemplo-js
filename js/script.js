@@ -10,83 +10,74 @@ no código*/
 // elementoH1.addEventListener("click", function(){
 //     console.log("Agora vitaminado!");
 // });
-/*
-//Declaradores em JavaScript
-//Var
-var nome = "João";
-console.log(nome);
-//Let
-let sobrenome = "Sousa";
-//Const
-const idade = 25;
-// idade = 30; //Erro! Não pode alterar o valor da variável
 
-var pessoaJuridica = "eu";
-//Interpolação
-console.log(`A empresa ${pessoaJuridica} é Jurídica.`);
+// //Declaradores em JavaScript
+// //Var
+// var nome = "João";
+// console.log(nome);
+// //Let
+// let sobrenome = "Sousa";
+// //Const
+// const idade = 25;
+// // idade = 30; //Erro! Não pode alterar o valor da variável
 
-//Tipos de dados
-//String
-/*
-var frase = "Eu amo programação.";
-console.log(frase);
+// var pessoaJuridica = "eu";
+// //Interpolação
+// console.log(`A empresa ${pessoaJuridica} é Jurídica.`);
 
-frase = 1000;
-console.log(frase);
-//Números
-var num1 = 4;
-var num2 = 6;
-console.log(num1 + num2);
+// //Tipos de dados
+// //String
+// var frase = "Eu amo programação.";
+// console.log(frase);
 
-console.log(num1 + num2 + frase);
+// frase = 1000;
+// console.log(frase);
+// //Números
+// var num1 = 4;
+// var num2 = 6;
+// console.log(num1 + num2);
 
-//Boolean (Verdadeiro ou Falso)
-var condicao = true;
-if (condicao) {
-  console.log("É Verdadeiro.");
-  console.log(num1 + num2 + frase + condicao);
-} else {
-  console.log("É Falso.");
-}
+// console.log(num1 + num2 + frase);
 
-//Objetos
-/* 
- Propriedades: Chaves, atributos 
- Métodos: Parênteses, funções 
- */
-/*
-var carro = {
-  marca: "Fiat",
-  modelo: "Palio",
-  ano: 2018,
-  cor: "Branco",
-};
+// //Boolean (Verdadeiro ou Falso)
+// var condicao = true;
+// if (condicao) {
+//   console.log("É Verdadeiro.");
+//   console.log(num1 + num2 + frase + condicao);
+// } else {
+//   console.log("É Falso.");
+// }
 
-console.log(carro["modelo"]);
-console.log(carro.ano);
+// //Objetos
+// /* 
+//  Propriedades: Chaves, atributos 
+//  Métodos: Parênteses, funções 
+//  */
+// var carro = {
+//   marca: "Fiat",
+//   modelo: "Palio",
+//   ano: 2018,
+//   cor: "Branco",
+// };
 
-carro.marca = "volkswagen";
-console.log(carro.marca);
-console.log(carro["marca"]);
+// console.log(carro["modelo"]);
+// console.log(carro.ano);
 
+// carro.marca = "volkswagen";
+// console.log(carro.marca);
+// console.log(carro["marca"]);
 
-// Tradicional
-function soma(param1, param2){
+//Funções
 
-}
+//Tradicional
+// function soma(param1,param2){
+//   //Escopo da função
+// }
 
-const soma = (param1, param2) => {
-
-}
-
-const soma = (a,b)=>{
-  return a+b;
-}
-
-*/
-
-// Arrow function não tem o "this"
-// Function tradicional tem o "this"
+// //Arrow
+// const soma = (args,args)=>{
+//   //Escopo da função
+// }
 
 // const soma = (a,b)=>{
 //   this.a = a;
@@ -102,64 +93,120 @@ const soma = (a,b)=>{
 
 // console.log(soma(2,2));
 
-//const obj ={
-//  nome :"José",
-//  saudacao:function () {
-//    return "oi, meu nome é " + this.nome + "!";
-//  }
-//}
-//
-//console.log(saudacao)
+// const obj ={
+//   nome :"José",
+//   saudacao: function () {
+//     return "Oi, " + this.nome + "!";
+//   }
+// }
+// console.log(obj.saudacao());
 
-//let elInputEmail = document.getElementById("idEmail");
-//
-//console.log(elInputEmail)
-//
-//let elLabelEmail = document.querySelector("label[for=idEmail]");
-//console.log(elLabelEmail.innerText);
-//
-//const pegaTexto = (texto)=>{
-//       console.log(texto.value);
-//}
+// const obj ={
+//   nome :"José",
+//   saudacao:  ()=> {
+//     return "Oi, " + this.nome + "!";
+//   }
+// }
+// console.log(obj.saudacao());
+
+// let elInputEmail = document.getElementById("idEmail");
+// console.log(elInputEmail);
+
+// let elLabelEmail = document.querySelector("label[for=idEmail]");
+// console.log(elLabelEmail.innerText);
+
+// const pegaTexto = (texto)=>{
+//   console.log(texto.value);
+// }
+
+
+//Arrays
 
 //Recuperar todos os inputs através de funções do DOM.
+// const listaDeInputs = document.getElementsByTagName("input");
+// console.log(listaDeInputs);
 
-//const listaDeInputs = document.getElementsByTagName("input");
-//console.log(listaDeInputs);
-//
-////Criando um array de números
-//let numeros1 = [1,2,3,4,5];
-//let numeros2 = [6,7,8,9,10];
-//
-////Con
-//let numeros3 = numeros1.concat(numeros2);
-//console.log(numeros3);
-//
-//let numeros4 = [...numeros1, ...numeros2];
-//console.log(numeros4);
-//
-////Converter uma HTMLCollections em Array com SPREAD (...);
-//const novaListaDeElementos = [...listaDeInputs];
-//console.log(novaListaDeElementos);
+// //Criando um array de números
+// let numeros1 = [1,2,3,4,5];
+// let numeros2 = [6,7,8,9,10];
+
+// //Concatenar os arrays em um único array utilizando a função concat.
+// let numeros3 = numeros1.concat(numeros2);
+// console.log(numeros3);
+
+// //Concatenar os arrays em um único array utilizando ooperador SPREAD ( ... );
+// let numeros4 = [...numeros1, ...numeros2];
+// console.log(numeros4);
+
+// //Converter uma HTMLCollections em Array com SPREAD (...);
+// const novaListaDeElementos = [...listaDeInputs];
+// console.log(novaListaDeElementos);
+
+let listaUsuarios = [
+  {nome:"João José",emailUsuario: "jo@email.com",senhaUsuario: "123456"},
+  {nome:"Maria Chiquinha",emailUsuario: "ma@email.com",senhaUsuario: "123456"},
+  {nome:"Zezinho Trovão",emailUsuario: "ze@email.com",senhaUsuario: "123456"},
+  {nome:"Neiva Lurdes",emailUsuario: "ne@email.com",senhaUsuario: "123456"},
+  {nome:"Beto Carlos",emailUsuario: "be@email.com",senhaUsuario: "123456"},
+];
+
+// let ulLista = document.querySelector("#menu");
+
+// listaUsuarios.forEach((u)=>{
+//   let li = document.createElement("li");
+//   li.setAttribute("class","link");
+//   li.innerHTML = `<a href="#">${u.nome}</a>`;
+//   ulLista.appendChild(li);
+// });
+
 
 const validacao = (input1,input2)=>{
 
-  let usuario = {
-    emailUsuario: "jo@email.com",
-    senhaUsuario: "123456"
-  }
+  let msgStatus;
 
-  if ((input1.value == usuario.emailUsuario) && (input2.value == usuario.senhaUsuario)) {
-     console.log("Login validado copm SUCESSO!");
-      // input1.value = "";
-      // input2.value = "";
-      document.querySelector("form").reset();
-    return false;
-  }
-  else{
-     console.log("Nome de usuário ou senha incorretos");
-    return false;
-  }
+  //Tratamento de erro
+  try{
+  //Vamos recuperar o elemento da msgStatus:
+    msgStatus = document.querySelector(".valida");
+ 
+  for (let x = 0; x < listaUsuarios.length; x++) {
+
+      if ((input1.value == listaUsuarios[x].emailUsuario) && (input2.value == listaUsuarios[x].senhaUsuario)) {
+          msgStatus.innerText = "Login validado com SUCESSO!";
+          //Vamos trocar a classe css da msgStatus
+          msgStatus.setAttribute("class","sucesso");
+          document.querySelector("form").reset();
+
+          setTimeout(()=>{
+            //Vamos apagar o texto da msgStatus
+            msgStatus.innerText = "";
+            //Vamos trocar a classe css da msgStatus
+            msgStatus.setAttribute("class","valida");
+          },3000);
+
+          return false;
+      }
+    }
+
+      msgStatus.innerText = "Nome de usuário ou senha incorretos.";
+      msgStatus.setAttribute("class","erro");
+      setTimeout(()=>{
+        //Vamos apagar o texto da msgStatus
+        msgStatus.innerText = "";
+        //Vamos trocar a classe css da msgStatus
+        msgStatus.setAttribute("class","valida");
+      },3000);
+    }catch(erro){
+      msgStatus = document.querySelector("div p");
+      msgStatus.setAttribute("class","valida");
+    }
+      return false;
 
 }
+
+
+
+
+
+
 
