@@ -172,6 +172,10 @@ const validacao = (input1,input2)=>{
   for (let x = 0; x < listaUsuarios.length; x++) {
 
       if ((input1.value == listaUsuarios[x].emailUsuario) && (input2.value == listaUsuarios[x].senhaUsuario)) {
+
+        //Salvando o objeto validado no localStorage
+        localStorage.setItem( "obj-validado", JSON.stringify(listaUsuarios[x]));
+
           msgStatus.innerText = "Login validado com SUCESSO!";
           //Vamos trocar a classe css da msgStatus
           msgStatus.setAttribute("class","sucesso");
@@ -182,7 +186,7 @@ const validacao = (input1,input2)=>{
             msgStatus.innerText = "";
             //Vamos trocar a classe css da msgStatus
             msgStatus.setAttribute("class","valida");
-            window.location.href = "https://www.fiap.com.br";
+            window.location.href = "../status/sucesso.html";
           },3000);
 
           return false;
@@ -196,6 +200,7 @@ const validacao = (input1,input2)=>{
         msgStatus.innerText = "";
         //Vamos trocar a classe css da msgStatus
         msgStatus.setAttribute("class","valida");
+        window.location.href = "../status/erro.html";
       },3000);
     }catch(erro){
       msgStatus = document.querySelector("div p");
