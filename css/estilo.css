@@ -43,7 +43,7 @@
   label{
     display: block;
   }
-  input[type="password"], input[type="email"] {
+  input[type="password"], input[type="email"] ,input[type="text"]{
     display: block;
     border-radius: 5px;
     border: none;
@@ -113,5 +113,7 @@
     content: "____________";
   }
 
+  .fa-regular{
+    cursor: pointer;
+  }
 
-  
