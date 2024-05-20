@@ -209,6 +209,18 @@ const validacao = (input1,input2)=>{
       return false;
 
 }
+//Capturando o botao de login no DOM
+const botaoLogin = document.querySelector("#btnLogin");
+const modal = document.querySelector("dialog");
+botaoLogin.addEventListener("click", ()=>{
+  modal.show();
+});
+const botaoModal = document.querySelector("#btnModal");
+botaoModal.addEventListener("click", ()=>{
+  modal.close();
+});
+
+
 
 
 
