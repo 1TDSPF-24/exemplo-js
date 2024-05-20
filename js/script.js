@@ -210,9 +210,27 @@ const validacao = (input1,input2)=>{
 
 }
 
-//Capiturando o botão de login no DOM.
+//capturando o icone de olho
+let iconEye = document.querySelector(".fa-regular");
+//Atrelar um evento de click ao olho...
+iconEye.addEventListener("click", (e)=>{
+  //Capturar o input senha para alterar o atributo type: 
+  let inputSenha = document.querySelector("#idSenha");
+
+
+  if (e.target.className == "fa-regular fa-eye-slash"){
+    e.target.setAttribute("class", "fa-regular fa-eye");
+    inputSenha.setAttribute("type", "password");
+  } else {
+    e.target.setAttribute("class", "fa-regular fa-eye-slash");
+    inputSenha.setAttribute("type","text");
+  }
+})
+
+
+//Capturando o botão de login no DOM.
 const botaoLogin = document.querySelector("#btnLogin");
-//Capiturando o elemento dialog.
+//Capturando o elemento dialog.
 const modal = document.querySelector("dialog")
 //Atrelando um evento de clique no botão.
 botaoLogin.addEventListener("click",()=>{
