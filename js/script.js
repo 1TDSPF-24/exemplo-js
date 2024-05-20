@@ -49,9 +49,9 @@ no código*/
 // }
 
 // //Objetos
-// /* 
-//  Propriedades: Chaves, atributos 
-//  Métodos: Parênteses, funções 
+// /*
+//  Propriedades: Chaves, atributos
+//  Métodos: Parênteses, funções
 //  */
 // var carro = {
 //   marca: "Fiat",
@@ -119,7 +119,6 @@ no código*/
 //   console.log(texto.value);
 // }
 
-
 //Arrays
 
 //Recuperar todos os inputs através de funções do DOM.
@@ -143,11 +142,23 @@ no código*/
 // console.log(novaListaDeElementos);
 
 let listaUsuarios = [
-  {nome:"João José",emailUsuario: "jo@email.com",senhaUsuario: "123456"},
-  {nome:"Maria Chiquinha",emailUsuario: "ma@email.com",senhaUsuario: "123456"},
-  {nome:"Zezinho Trovão",emailUsuario: "ze@email.com",senhaUsuario: "123456"},
-  {nome:"Neiva Lurdes",emailUsuario: "ne@email.com",senhaUsuario: "123456"},
-  {nome:"Beto Carlos",emailUsuario: "be@email.com",senhaUsuario: "123456"},
+  { nome: "João José", emailUsuario: "jo@email.com", senhaUsuario: "123456" },
+  {
+    nome: "Maria Chiquinha",
+    emailUsuario: "ma@email.com",
+    senhaUsuario: "123456",
+  },
+  {
+    nome: "Zezinho Trovão",
+    emailUsuario: "ze@email.com",
+    senhaUsuario: "123456",
+  },
+  {
+    nome: "Neiva Lurdes",
+    emailUsuario: "ne@email.com",
+    senhaUsuario: "123456",
+  },
+  { nome: "Beto Carlos", emailUsuario: "be@email.com", senhaUsuario: "123456" },
 ];
 
 // let ulLista = document.querySelector("#menu");
@@ -159,60 +170,82 @@ let listaUsuarios = [
 //   ulLista.appendChild(li);
 // });
 
-
-const validacao = (input1,input2)=>{
-
+const validacao = (input1, input2) => {
   let msgStatus;
 
   //Tratamento de erro
-  try{
-  //Vamos recuperar o elemento da msgStatus:
+  try {
+    //Vamos recuperar o elemento da msgStatus:
     msgStatus = document.querySelector(".valida");
- 
-  for (let x = 0; x < listaUsuarios.length; x++) {
 
-      if ((input1.value == listaUsuarios[x].emailUsuario) && (input2.value == listaUsuarios[x].senhaUsuario)) {
-
+    for (let x = 0; x < listaUsuarios.length; x++) {
+      if (
+        input1.value == listaUsuarios[x].emailUsuario &&
+        input2.value == listaUsuarios[x].senhaUsuario
+      ) {
         //Salvando o objeto validado no localStorage
-        localStorage.setItem( "obj-validado", JSON.stringify(listaUsuarios[x]));
+        localStorage.setItem("obj-validado", JSON.stringify(listaUsuarios[x]));
 
-          msgStatus.innerText = "Login validado com SUCESSO!";
+        msgStatus.innerText = "Login validado com SUCESSO!";
+        //Vamos trocar a classe css da msgStatus
+        msgStatus.setAttribute("class", "sucesso");
+        document.querySelector("form").reset();
+
+        setTimeout(() => {
+          //Vamos apagar o texto da msgStatus
+          msgStatus.innerText = "";
           //Vamos trocar a classe css da msgStatus
-          msgStatus.setAttribute("class","sucesso");
-          document.querySelector("form").reset();
+          msgStatus.setAttribute("class", "valida");
+          window.location.href = "../status/sucesso.html";
+        }, 3000);
 
-          setTimeout(()=>{
-            //Vamos apagar o texto da msgStatus
-            msgStatus.innerText = "";
-            //Vamos trocar a classe css da msgStatus
-            msgStatus.setAttribute("class","valida");
-            window.location.href = "../status/sucesso.html";
-          },3000);
-
-          return false;
+        return false;
       }
     }
 
-      msgStatus.innerText = "Nome de usuário ou senha incorretos.";
-      msgStatus.setAttribute("class","erro");
-      setTimeout(()=>{
-        //Vamos apagar o texto da msgStatus
-        msgStatus.innerText = "";
-        //Vamos trocar a classe css da msgStatus
-        msgStatus.setAttribute("class","valida");
-        window.location.href = "../status/erro.html";
-      },3000);
-    }catch(erro){
-      msgStatus = document.querySelector("div p");
-      msgStatus.setAttribute("class","valida");
-    }
-      return false;
+    msgStatus.innerText = "Nome de usuário ou senha incorretos.";
+    msgStatus.setAttribute("class", "erro");
+    setTimeout(() => {
+      //Vamos apagar o texto da msgStatus
+      msgStatus.innerText = "";
+      //Vamos trocar a classe css da msgStatus
+      msgStatus.setAttribute("class", "valida");
+      window.location.href = "../status/erro.html";
+    }, 3000);
+  } catch (erro) {
+    msgStatus = document.querySelector("div p");
+    msgStatus.setAttribute("class", "valida");
+  }
+  return false;
+};
 
-}
+const botaoLogin = document.querySelector("#btnLogin");
+const modal = document.querySelector("dialog");
+const btnFecharModal = document.querySelector(".close-modal");
+modal.close();
 
+botaoLogin.addEventListener("click", () => {
+  modal.showModal();
+  modal.style.backdrop = "background: rgba(0, 0, 0, 0.575)";
+});
 
+btnFecharModal.addEventListener("click", () => {
+  modal.close();
+});
 
+//Capturando o icone de olho;
+let iconEye = document.querySelector(".fa-regular");
 
+let inputSenha = document.querySelector("#idSenha");
 
-
-
+//Atrelar um evento de click ao olho...
+iconEye.addEventListener("click", (e)=>{
+  if(e.target.className == "fa-regular fa-eye-slash"){
+    e.target.setAttribute("class", "fa-regular fa-eye");
+    inputSenha.setAttribute("type", "password");
+  }
+  else {
+    e.target.setAttribute("class", "fa-regular fa-eye-slash");
+    inputSenha.setAttribute("type", "text");
+  }
+});

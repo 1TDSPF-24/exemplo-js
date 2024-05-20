@@ -43,7 +43,7 @@
   label{
     display: block;
   }
-  input[type="password"], input[type="email"] {
+  input[type="password"], input[type="email"], input[type="text"] {
     display: block;
     border-radius: 5px;
     border: none;
@@ -74,4 +74,27 @@
     border: 2px solid #0e19be;
   }
 
-  
+.close-modal{
+  width: 3vw;
+  height: 3vw;
+  border-radius: 100%;
+  margin-top: 10px;
+  &:hover{
+    color: #fff;
+    background-color: red;
+    transition: .2s ease-in;
+  }
+}
+
+dialog::backdrop{
+  background: rgba(0, 0, 0, 0.575);
+}
+
+dialog{
+  margin: auto;
+  border: none;
+}
+
+.fa-regular{
+  cursor: pointer;
+}
