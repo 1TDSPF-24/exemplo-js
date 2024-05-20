@@ -210,6 +210,24 @@ const validacao = (input1,input2)=>{
 
 }
 
+
+//Capturando o icone de olho;
+let iconEye = document.querySelector(".fa-regular");
+//Atrelar um evento de click ao olho...
+iconEye.addEventListener("click", (e)=>{
+
+  
+
+  if(e.target.className == "fa-regular fa-eye-slash"){
+      e.target.setAttribute("class","fa-regular fa-eye");
+  }else{
+    e.target.setAttribute("class","fa-regular fa-eye-slash");
+  }
+});
+
+
+
+
 //Capturando o botão de login no DOM.
 const botaoLogin = document.querySelector("#btnLogin");
 //Capturando o elemento dialog(MODAL)
@@ -225,6 +243,7 @@ const botaoClose = document.querySelector("#btnClose");
 botaoClose.addEventListener("click",()=>{
   modal.close();
 });
+
 
 
 

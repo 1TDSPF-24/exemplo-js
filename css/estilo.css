@@ -59,6 +59,7 @@
   }
 
   button{
+    cursor: pointer;
     display: block;
     margin: 0 auto;
     width: 25vw;
@@ -87,6 +88,7 @@
   } */
 
   #btnClose{
+    cursor: pointer;
     display: block;
     width: 7.6vw;
     border-radius: 100%;
@@ -123,4 +125,8 @@
   .tit-valida::after{
     display: block;
     content: "____________";
+  }
+  
+  .fa-regular{
+    cursor: pointer;
   }
