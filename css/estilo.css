@@ -74,4 +74,42 @@
     border: 2px solid #0e19be;
   }
 
-  
+#btnFechar {
+  display: block;
+  border-radius: 100%;
+  width: 7.5vh;
+  transition: all .4s ease;
+  font-weight: bold;
+  text-align: center;
+
+}  
+#btnFechar:hover {
+  background-color: #ff0000;
+  color: #fff;
+  border: 2px solid #ff0000;
+}
+
+dialog::backdrop {
+  background-color: rgba(0,0,0,.8);
+}
+
+dialog {
+  margin: 7% auto;
+  border: none;
+  border-radius: 5px;
+}
+
+.tit-valida {
+  margin: 2%;
+}
+
+.tit-valida::after {
+  display: block;
+  content: "____________";
+}
+
+.tit-valida::before {
+  display: block;
+  content: "____________";
+  margin-bottom: 2%;
+}
