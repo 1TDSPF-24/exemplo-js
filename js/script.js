@@ -211,8 +211,28 @@ const validacao = (input1,input2)=>{
 }
 
 
+//Capturando o botão de login no DOM.
+const botaoLogin = document.querySelector("#btnLogin");
+// Modal
+const modal = document.querySelector("dialog");
+
+/*
+botaoLogin.addEventListener("click", function(){
+console.log(this.innerText);
+});
+*/
+
+botaoLogin.addEventListener("click", ()=>{
+  modal.showModal();
+  });
+
+const botaoFechar = document.querySelector("#btnFechar");
+
+botaoFechar.addEventListener("click", ()=>{
+    modal.close();
+    });
 
 
-
-
-
+const iconEye = document.querySelector("fa-regular");
+// Atrelando evento de click ao olho................
+iconEye
