@@ -211,7 +211,21 @@ const validacao = (input1,input2)=>{
 }
 
 
+//Capturando o botão de login no DOM.
+const botaoLogin = document.querySelector("#btnLogin");
+//Capturando o elemento dialog(MODAL)
+const modal = document.querySelector("dialog");
+//Atrelando um evento de click no botão:
+botaoLogin.addEventListener("click",()=>{
+  // modal.show();
+  modal.showModal();
+});
 
+//Crie um botão para fechar o modal dentro do próprio modal em formato redondo e com um ícone de X!!
+const botaoClose = document.querySelector("#btnClose");
+botaoClose.addEventListener("click",()=>{
+  modal.close();
+});
 
 
 
