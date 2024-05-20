@@ -15,23 +15,25 @@
 
 <body>
     
-    <header id="topo">
-        <h1 id="titulo">JavaScript</h1>
-        <nav>
-            <ul id="menu">
-                <li class="link"><a href="#">JavaScript</a></li>
-                <li class="link"><a href="#">Java</a></li>
-                <li class="link"><a href="#">C#</a></li>
-            </ul>
-        </nav>
-    </header>
+
     <div>
-        <h2>VALIDAÇÃO</h2>
+        <h2 class="tit-valida">VALIDAÇÃO</h2>
+
+<!-- 
+        <div>
+            <a href="#" id="botao">BOTÃO</a>
+        </div> -->
+
+
+        <button id="btnLogin">LOGIN</button>
+
+        <dialog>
         <div>
             <p class="valida"></p>
         </div>
-        <div>
+        <div> <button id="btnClose"> X </button>
             <form action="#" method="get" onsubmit="return validacao(idEmail,idSenha)">
+               
                 <fieldset>
                     <legend>LOGIN</legend>
                     <div>
@@ -41,7 +43,9 @@
                     <div>
                         <label for="idSenha">Senha</label>
                         <input type="password" name="txtSenha" id="idSenha" placeholder="Digite sua senha">
+                      
                         <i class="fa-regular fa-eye-slash"></i>
+                        
                     </div>
                     <div>
                         <input type="checkbox" name="txtLembrar" id="idLembrar" value="lembrete" checked>
@@ -54,6 +58,7 @@
             </form>
         </div>
     </div>
-  
+</dialog>
+    
 </body>                     
 </html>
