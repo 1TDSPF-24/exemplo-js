@@ -63,10 +63,14 @@
     margin: 0 auto;
     width: 25vw;
     height: 8vh;
+    background-color: #2a88aa;
     box-shadow: inset 0 0 10px rgba(57, 220, 57, 0.5);
-    border: 2px solid #0a840a;
+    border: 2px solid #fff;
     border-radius: 5px;
     transition: all .4s ease;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
   }
 
   button:hover{
@@ -88,11 +92,16 @@
 
   #btnClose{
     display: block;
-    width: 7.6vw;
+    width: 40px;
+    height: 40px;
+    float: right;
     border-radius: 100%;
     transition: all .4s ease;
     font-weight: bold;
     text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2%;
+    margin-right: 2%;
   }
 
   #btnClose:hover{
@@ -108,6 +117,9 @@
     margin: 7% auto;
     border: none;
     border-radius: 5px;
+    background-image: url("../img/back-login-1280×796.png");
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .tit-valida{
