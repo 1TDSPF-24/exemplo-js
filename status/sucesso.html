@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUCESSO</title>
-
+    <link rel="stylesheet" href="../css/estilo.css">
     <script src="../js/script-sucesso.js" defer></script>
 </head>
 <body>
@@ -13,5 +13,34 @@
     <div>
         <a href="../index.html">Home</a> | <a id="user-logout" href="#">Logout...</a>
     </div>
+
+    <!--
+        - table - tabela 
+        - tr - table row - linha da tabela
+        - th - table headers - cabecalho tabela, primera linha apenas
+        - td - table data - dados da tabela, linha a partir da segunda
+        - thead, tbody e tfoot sao areas da tabela que dividem em  cabeca, corpo e pe
+    -->
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Editar / Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Total de registros - 0</td>
+            </tr>
+        </tfoot>
+    </table>
 </body>
 </html>
