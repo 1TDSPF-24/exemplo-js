@@ -176,14 +176,22 @@ const validacao = (input1,input2)=>{
         //Salvando o objeto validado no localStorage
         localStorage.setItem( "obj-validado", JSON.stringify(listaUsuarios[x]));
 
-          msgStatus.innerText = "Login validado com SUCESSO!";
+          // msgStatus.innerHTML = "<span>Login validado com SUCESSO!</span>";
+
+          //Criar um elemento com a função createElement(nomeDoElementoA-serCriado)
+          let spanCriado = document.createElement("span");
+          spanCriado.textContent = "Login validado com SUCESSO!";
+
+          //Adicionando o elemento criado a um elemento existente com a função appendChild
+          msgStatus.appendChild(spanCriado);
+
           //Vamos trocar a classe css da msgStatus
           msgStatus.setAttribute("class","sucesso");
           document.querySelector("form").reset();
 
           setTimeout(()=>{
             //Vamos apagar o texto da msgStatus
-            msgStatus.innerText = "";
+            msgStatus.innerHTML = "";
             //Vamos trocar a classe css da msgStatus
             msgStatus.setAttribute("class","valida");
             window.location.href = "../status/sucesso.html";
@@ -193,11 +201,20 @@ const validacao = (input1,input2)=>{
       }
     }
 
-      msgStatus.innerText = "Nome de usuário ou senha incorretos.";
+      // msgStatus.innerHTML = "<span>Nome de usuário ou senha incorretos.</span>";
       msgStatus.setAttribute("class","erro");
+
+    
+          //Criar um elemento com a função createElement(nomeDoElementoA-serCriado)
+          let spanCriado = document.createElement("span");
+          spanCriado.textContent = "Nome de usuário ou senha incorretos.";
+
+          //Adicionando o elemento criado a um elemento existente com a função appendChild
+          msgStatus.appendChild(spanCriado);
+
       setTimeout(()=>{
         //Vamos apagar o texto da msgStatus
-        msgStatus.innerText = "";
+        msgStatus.innerHTML = "";
         //Vamos trocar a classe css da msgStatus
         msgStatus.setAttribute("class","valida");
         window.location.href = "../status/erro.html";
@@ -216,17 +233,18 @@ let iconEye = document.querySelector(".fa-regular");
 //Atrelar um evento de click ao olho...
 iconEye.addEventListener("click", (e)=>{
 
-  
+  //Capturar o input senha para alterar o atributo type:
+  let inputSenha = document.querySelector("#idSenha");
 
   if(e.target.className == "fa-regular fa-eye-slash"){
       e.target.setAttribute("class","fa-regular fa-eye");
+      inputSenha.setAttribute("type","password");
   }else{
     e.target.setAttribute("class","fa-regular fa-eye-slash");
+    inputSenha.setAttribute("type","text");
   }
 });
-
-
-
+ 
 
 //Capturando o botão de login no DOM.
 const botaoLogin = document.querySelector("#btnLogin");
@@ -243,10 +261,3 @@ const botaoClose = document.querySelector("#btnClose");
 botaoClose.addEventListener("click",()=>{
   modal.close();
 });
-
-
-
-
-
-
-
