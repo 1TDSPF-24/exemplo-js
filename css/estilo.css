@@ -43,7 +43,7 @@
   label{
     display: block;
   }
-  input[type="password"], input[type="email"] {
+  input[type="password"], input[type="email"] ,input[type="text"]{
     display: block;
     border-radius: 5px;
     border: none;
@@ -100,6 +100,8 @@
     font-weight: bold;
     text-align: center;
     font-size: 1.2rem;
+    margin-top: 2%;
+    margin-right: 2%;
   }
 
   #btnClose:hover{
@@ -115,7 +117,7 @@
     margin: 7% auto;
     border: none;
     border-radius: 5px;
-    background-image: url("../img/back-login-128-796.png");
+    background-image: url("../img/back-login-1280×796.png");
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -133,8 +135,20 @@
   .tit-valida::after{
     display: block;
     content: "____________";
-  }
-  
+  } 
+
   .fa-regular{
     cursor: pointer;
+  }
+
+  table{
+    margin: 0 auto;
+    border-collapse:collapse;
+    border: 2px solid #0e19be;
+  }
+
+  th,td{
+    border: 2px solid #0e19be;
+    padding: 10px;
+    text-align: center;
   }

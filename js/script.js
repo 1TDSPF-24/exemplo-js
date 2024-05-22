@@ -142,13 +142,21 @@ no código*/
 // const novaListaDeElementos = [...listaDeInputs];
 // console.log(novaListaDeElementos);
 
-let listaUsuarios = [
-  {nome:"João José",emailUsuario: "jo@email.com",senhaUsuario: "123456"},
-  {nome:"Maria Chiquinha",emailUsuario: "ma@email.com",senhaUsuario: "123456"},
-  {nome:"Zezinho Trovão",emailUsuario: "ze@email.com",senhaUsuario: "123456"},
-  {nome:"Neiva Lurdes",emailUsuario: "ne@email.com",senhaUsuario: "123456"},
-  {nome:"Beto Carlos",emailUsuario: "be@email.com",senhaUsuario: "123456"},
-];
+
+let listaUsuarios =  JSON.parse(localStorage.getItem("base-dados")) || []; 
+
+if(listaUsuarios){
+  listaUsuarios = [
+    {nome:"João José",emailUsuario: "jo@email.com",senhaUsuario: "123456"},
+    {nome:"Maria Chiquinha",emailUsuario: "ma@email.com",senhaUsuario: "123456"},
+    {nome:"Zezinho Trovão",emailUsuario: "ze@email.com",senhaUsuario: "123456"},
+    {nome:"Neiva Lurdes",emailUsuario: "ne@email.com",senhaUsuario: "123456"},
+    {nome:"Beto Carlos",emailUsuario: "be@email.com",senhaUsuario: "123456"},
+  ];
+
+  localStorage.setItem("base-dados",JSON.stringify(listaUsuarios));
+}
+
 
 // let ulLista = document.querySelector("#menu");
 
@@ -175,6 +183,11 @@ const validacao = (input1,input2)=>{
 
         //Salvando o objeto validado no localStorage
         localStorage.setItem( "obj-validado", JSON.stringify(listaUsuarios[x]));
+
+        //Criando o token do usuário:
+        const userToken = Math.random().toString(16).substring(2)+Math.random().toString(16).substring(2);
+        //Armazenando no sessionStorage
+        sessionStorage.setItem("token",userToken);
 
           // msgStatus.innerHTML = "<span>Login validado com SUCESSO!</span>";
 

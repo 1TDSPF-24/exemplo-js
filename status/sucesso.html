@@ -8,10 +8,50 @@
     <script src="../js/script-sucesso.js" defer></script>
 </head>
 <body>
-    <h1>Bem Vindo</h1>
-    <h2 id="user-titulo">FULANO</h2>
-    <div>
-        <a href="../index.html">Home</a> | <a id="user-logout" href="#">Logout...</a>
-    </div>
+ 
+    <header id="topo">
+        <h1 id="titulo">JavaScript</h1>
+        <nav>
+            <ul id="menu">
+                <li class="link"><a href="#">JavaScript</a></li>
+                <li class="link"><a href="#">Java</a></li>
+                <li class="link"><a href="#">C#</a></li>
+            </ul>
+        </nav>
+        <h2 id="user-titulo">FULANO</h2>
+        <div>
+            <a href="../index.html">Home</a> | <a id="user-logout" href="#">Logout...</a>
+        </div>
+    </header>
+
+        <!--
+            - table  = tabela
+            - tr = table row = linha da tabela
+            - th = tbale headers = Cabeçalho da tabela esão o inicio das colunas, primeira linha apenas.
+            - td = table data = Onde ficam todos os dados são as colunas assim como as th.
+            - thead, tbody e tfoot são áreas da tabela que dividem em cabeça, corpo e pé.
+        -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Editar / Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total de registros = 0</td>
+                </tr>
+            </tfoot>
+        </table>
+
 </body>
 </html>
