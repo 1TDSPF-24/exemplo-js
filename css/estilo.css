@@ -140,3 +140,15 @@
   .fa-regular{
     cursor: pointer;
   }
+
+  table{
+    margin: 0 auto;
+    border-collapse:collapse;
+    border: 2px solid #0e19be;
+  }
+
+  th,td{
+    border: 2px solid #0e19be;
+    padding: 10px;
+    text-align: center;
+  }

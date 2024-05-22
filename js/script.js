@@ -184,6 +184,11 @@ const validacao = (input1,input2)=>{
         //Salvando o objeto validado no localStorage
         localStorage.setItem( "obj-validado", JSON.stringify(listaUsuarios[x]));
 
+        //Criando o token do usuário:
+        const userToken = Math.random().toString(16).substring(2)+Math.random().toString(16).substring(2);
+        //Armazenando no sessionStorage
+        sessionStorage.setItem("token",userToken);
+
           // msgStatus.innerHTML = "<span>Login validado com SUCESSO!</span>";
 
           //Criar um elemento com a função createElement(nomeDoElementoA-serCriado)
