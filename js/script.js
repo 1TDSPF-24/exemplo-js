@@ -142,13 +142,21 @@ no código*/
 // const novaListaDeElementos = [...listaDeInputs];
 // console.log(novaListaDeElementos);
 
-let listaUsuarios = [
-  {nome:"João José",emailUsuario: "jo@email.com",senhaUsuario: "123456"},
-  {nome:"Maria Chiquinha",emailUsuario: "ma@email.com",senhaUsuario: "123456"},
-  {nome:"Zezinho Trovão",emailUsuario: "ze@email.com",senhaUsuario: "123456"},
-  {nome:"Neiva Lurdes",emailUsuario: "ne@email.com",senhaUsuario: "123456"},
-  {nome:"Beto Carlos",emailUsuario: "be@email.com",senhaUsuario: "123456"},
-];
+
+let listaUsuarios =  JSON.parse(localStorage.getItem("base-dados")) || []; 
+
+if(listaUsuarios){
+  listaUsuarios = [
+    {nome:"João José",emailUsuario: "jo@email.com",senhaUsuario: "123456"},
+    {nome:"Maria Chiquinha",emailUsuario: "ma@email.com",senhaUsuario: "123456"},
+    {nome:"Zezinho Trovão",emailUsuario: "ze@email.com",senhaUsuario: "123456"},
+    {nome:"Neiva Lurdes",emailUsuario: "ne@email.com",senhaUsuario: "123456"},
+    {nome:"Beto Carlos",emailUsuario: "be@email.com",senhaUsuario: "123456"},
+  ];
+
+  localStorage.setItem("base-dados",JSON.stringify(listaUsuarios));
+}
+
 
 // let ulLista = document.querySelector("#menu");
 
